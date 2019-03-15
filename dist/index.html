@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+    integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+    crossorigin='anonymous'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- icons -->
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!-- fonts -->
+
+  <script src="./bundle.js"></script>
+  <title>Reddit Visualization</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Live Reddit Visualization</h1>
+    <h2>A tool to visualize what's happening on your favorite subreddits!</h2>
+  </header>
+
+  <main>
+
+    <section class="instructions">
+      <h1>Instructions</h1>
+      <ul>
+        <li class="subreddit-instruction">Type in the name of the subreddit</li>
+        <li class="sort-instruction">Select sorting by hot, new, controversial,
+          top, or rising</li>
+        <li class="date-range-instruction">Select the date range</li>
+      </ul>
+    </section>
+
+    <form class="inputs">
+      <div class="suggestions">
+        <div>
+          <h1>Suggestions</h1> <i class="fas fa-caret-down"></i>
+        </div>
+        <ul>
+          <li>DataIsBeautiful</li>
+          <li>TrippinThroughTime</li>
+          <li>EarthPorn</li>
+          <li>FoodPorn</li>
+          <li>NotTheOnion</li>
+        </ul>
+      </div>
+      <div class="subreddit-input-parent">
+        <input type="text" name="subreddit" id="subreddit-input" placeholder="subreddit name">
+      </div>
+      <select name="sort" id="sort-input">
+        <option selected="selected" value="Sort">----- Sort -----</option>
+        <option value="Hot">Hot</option>
+        <option value="New">New</option>
+        <option value="Controversial">Controversial</option>
+        <option value="Date Range">Date Range</option>
+        <option value="rising">rising</option>
+      </select>
+      <select name="Date Range" id="Date-Range">
+        <option selected="selected" value="Date Range">--- Date Range ---</option>
+        <option value="Past Hour">Past Hour</option>
+        <option value="Past 24 Hours">Past 24 Hours</option>
+        <option value="Past Week">Past Week</option>
+        <option value="Past Month">Past Month</option>
+        <option value="Past Year">Past Year</option>
+        <option value="All Time">All Time</option>
+      </select>
+      <input class="submit" type="submit" value="Visualize!">
+    </form>
+
+    <section class="visualization-container">
+      <div class="visualization-options">
+        <button><i class="far fa-chart-bar"></i></button>
+        <button><i class="material-icons">bubble_chart</i></button>
+        <button><img src="https://img.icons8.com/metro/26/000000/scatter-plot.png"></button>
+      </div>
+      <div id="visualization">
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/mason-chinkin/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/MasonChinkin" target="_blank">
+        <i class="fab fa-github"></i> Github</a>
+      <a href="https://masonchinkin.github.io/" target="_blank">Personal
+        Website</a>
+    </div>
+    <a href="https://icons8.com/icon/1724/scatter-plot">Scatter Plot icon by
+      Icons8</a>
+  </footer>
+</body>
+
+</html>

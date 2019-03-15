@@ -1,0 +1,102 @@
+.inputs {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 30px;
+  margin: 10px 0;
+  font-size: 13px;
+  font-weight: lighter;
+
+  &>* {
+    margin-right: 5px;
+  }
+
+  &>*::last-child {
+    margin-right: 0;
+  }
+}
+
+.subreddit-input-parent {
+  position: relative;
+}
+
+#subreddit-input {
+  border-radius: 5px;
+  width: 200px;
+  padding: 0 5px;
+  margin-right: 5px;
+
+  height: 100%;
+
+  &::placeholder {
+    font-size: 13px;
+  }
+}
+
+.suggestions {
+  height: 30px;
+  transition: all .4s;
+  overflow: hidden;
+  background: white;
+  // position: absolute;
+  // bottom: 0px;
+  // left: -145px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  border-radius: 5px;
+
+  &:hover {
+    height: 122px;
+    box-shadow: 1px 1px 8px rgba($color: black, $alpha: 0.5);
+    background-image: none;
+
+    & h1 {
+      font-weight: bold;
+    }
+  }
+
+  &>div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & h1 {
+    margin-bottom: 8px;
+  }
+
+  &>ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & li {
+    cursor: pointer;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+
+  & li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 3px 3px 6px rgba($color: black, $alpha: 0.3);
+
+  &:hover {
+    filter: brightness(80%);
+  }
+
+  &:active {
+    position: relative;
+    top: 3px;
+    left: 3px;
+    box-shadow: none;
+  }
+}
