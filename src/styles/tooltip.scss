@@ -1,0 +1,54 @@
+.barLabel {
+  text-anchor: middle;
+  pointer-events: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  pointer-events: none;
+}
+
+#tooltip {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 2;
+
+  &>* {
+    margin-bottom: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: none;
+  }
+}
+
+#tooltip.hidden {
+  display: none;
+}
+
+#tooltip h1 {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+#tooltip h2 {
+  font-size: 16px;
+  font-weight: 500;
+
+  &>span {
+    font-weight: 300;
+  }
+}
+
+#pic {
+  width: 100%;
+}
+
+.no-image {
+  height: 100px !important;
+}

@@ -16,7 +16,6 @@
 
   <!-- fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!-- fonts -->
 
   <script src="./bundle.js"></script>
@@ -44,49 +43,55 @@
       </ul>
     </section>
 
-    <form class="inputs">
+    <div class="inputs">
       <div class="suggestions">
         <div>
           <h1>Suggestions</h1> <i class="fas fa-caret-down"></i>
         </div>
-        <ul>
-          <li>DataIsBeautiful</li>
-          <li>TrippinThroughTime</li>
-          <li>EarthPorn</li>
-          <li>FoodPorn</li>
-          <li>NotTheOnion</li>
+        <ul class="suggestion-list">
+          <li class="suggestion-list-item">DataIsBeautiful</li>
+          <li class="suggestion-list-item">TrippinThroughTime</li>
+          <li class="suggestion-list-item">EarthPorn</li>
+          <li class="suggestion-list-item">FoodPorn</li>
+          <li class="suggestion-list-item">NotTheOnion</li>
         </ul>
       </div>
-      <div class="subreddit-input-parent">
-        <input type="text" name="subreddit" id="subreddit-input" placeholder="subreddit name">
-      </div>
+      <input type="text" name="subreddit" id="subreddit-input" placeholder="subreddit name">
       <select name="sort" id="sort-input">
         <option selected="selected" value="Sort">----- Sort -----</option>
-        <option value="Hot">Hot</option>
-        <option value="New">New</option>
-        <option value="Controversial">Controversial</option>
-        <option value="Date Range">Date Range</option>
-        <option value="rising">rising</option>
+        <option value="hot">Hot</option>
+        <option value="top">Top</option>
+        <option value="new">New</option>
+        <option value="controversial">Controversial</option>
+        <option value="rising">Rising</option>
       </select>
-      <select name="Date Range" id="Date-Range">
+      <select disabled name="Date Range" id="date-range">
         <option selected="selected" value="Date Range">--- Date Range ---</option>
         <option value="Past Hour">Past Hour</option>
-        <option value="Past 24 Hours">Past 24 Hours</option>
-        <option value="Past Week">Past Week</option>
-        <option value="Past Month">Past Month</option>
-        <option value="Past Year">Past Year</option>
-        <option value="All Time">All Time</option>
+        <!-- 24hr option is blank in reddit url -->
+        <option value="">Past 24 Hours</option>
+        <option value="week">Past Week</option>
+        <option value="month">Past Month</option>
+        <option value="year">Past Year</option>
+        <option value="all">All Time</option>
       </select>
       <input class="submit" type="submit" value="Visualize!">
-    </form>
+    </div>
 
     <section class="visualization-container">
       <div class="visualization-options">
-        <button><i class="far fa-chart-bar"></i></button>
-        <button><i class="material-icons">bubble_chart</i></button>
-        <button><img src="https://img.icons8.com/metro/26/000000/scatter-plot.png"></button>
+        <button id="bar-button"><i class="far fa-chart-bar"></i></button>
+        <button id="bubble-button"><i class="material-icons">bubble_chart</i></button>
+        <button id="scatter-button"><img src="https://img.icons8.com/metro/26/000000/scatter-plot.png"></button>
       </div>
       <div id="visualization">
+      </div>
+      <div id="tooltip" class="hidden">
+        <h1><span id="Subreddit">xxx</span></h1>
+        <h2>Title: <span id="Title">xxx</span></h2>
+        <h2>Posted: <span id="Posted">xxx</span></h2>
+        <h2>Upvotes: <span id="Upvotes">xxx</span></h2>
+        <img id="pic">
       </div>
 
     </section>

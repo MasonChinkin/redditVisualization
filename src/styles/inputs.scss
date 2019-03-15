@@ -16,15 +16,12 @@
   }
 }
 
-.subreddit-input-parent {
-  position: relative;
-}
-
 #subreddit-input {
   border-radius: 5px;
   width: 200px;
-  padding: 0 5px;
+  padding: 0 8px;
   margin-right: 5px;
+  font-size: 13px;
 
   height: 100%;
 
@@ -38,9 +35,6 @@
   transition: all .4s;
   overflow: hidden;
   background: white;
-  // position: absolute;
-  // bottom: 0px;
-  // left: -145px;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -54,6 +48,7 @@
 
     & h1 {
       font-weight: bold;
+      pointer-events: none;
     }
   }
 

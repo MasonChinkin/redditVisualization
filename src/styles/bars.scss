@@ -1,0 +1,28 @@
+.bar {
+  fill: rgb(78, 146, 201);
+  transition: fill 0.3s;
+  cursor: pointer;
+  rx: 5px;
+
+  &:hover {
+    fill: rgb(50, 106, 151);
+  }
+}
+
+.barLabel {
+  font-size: 12px;
+}
+
+.xAxis text {
+  pointer-events: none;
+  text-anchor: start;
+  font-size: 12px;
+  transform: rotate(45deg);
+}
+
+.yAxis text {
+  text-anchor: middle;
+  font-weight: bold;
+  font-size: 20px;
+  pointer-events: none;
+}
