@@ -25,18 +25,26 @@ header {
 
 .links {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   position: fixed;
   background: white;
   width: 100%;
   bottom: 0;
   height: 5%;
+
+  &>* {
+    margin-right: 60px;
+  }
+
+  &::last-child {
+    margin-right: 0;
+  }
 }
 
 footer>a {
   position: fixed;
-  bottom: 5px;
+  bottom: 0;
   font-size: 1px;
   color: white;
 }
@@ -53,7 +61,7 @@ main {
   border-radius: 5px;
 
   h1 {
-    font-size: 18;
+    font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
   }
@@ -65,8 +73,15 @@ main {
   }
 
   li {
-    margin-left: 28px;
+    font-size: 16px;
+    margin-left: 22px;
     margin-bottom: 5px;
     list-style-type: square;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
+
+
 }
