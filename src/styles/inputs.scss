@@ -22,8 +22,8 @@
   padding: 0 8px;
   margin-right: 5px;
   font-size: 13px;
-
   height: 100%;
+  font-weight: 300;
 
   &::placeholder {
     font-size: 13px;
@@ -70,6 +70,10 @@
     cursor: pointer;
     font-weight: 300;
     margin-bottom: 5px;
+
+    &:active {
+      background: lightgrey;
+    }
   }
 
   & li:last-child {

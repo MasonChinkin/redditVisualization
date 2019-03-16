@@ -16,12 +16,12 @@ export function dateRangeNeeded() {
 
 export async function visualize(vizType) {
   let url = getURL();
+  console.log(url);
   const json = await fetch(url).then(res => res.json())
 
   const dataset = []
 
-  for (var i = 0; i < json.data.children.length; i++) {
-
+  for (var i = 0; i < 20; i++) {
     dataset.push({
       id: json.data.children[i].data.id,
       ups: json.data.children[i].data.ups,
@@ -33,7 +33,11 @@ export async function visualize(vizType) {
       score: json.data.children[i].data.score,
       subreddit: json.data.children[i].data.subreddit_name_prefixed,
       title: json.data.children[i].data.title,
-      url: usableUrl(json.data.children[i].data.url),
+      url: usableUrl(
+        json.data.children[i].data.url,
+        (json.data.children[i].data.preview) ? json.data.children[i].data.preview.images[0].source.url : null,
+        json.data.children[i].data.thumbnail
+      ),
     })
   }
 
@@ -52,16 +56,22 @@ function getURL() {
   if (sort === "top") {
     url += `?t=${dateRange}`;
   }
-  // url += "&limit=20";
 
   return url;
 }
 
 //function to only include urls that can be previewed (jpgs)
-function usableUrl(url) {
+function usableUrl(url, preview, thumbnail) {
+  let unencoded;
+  if (preview) {
+    unencoded = preview.split('&amp;').join('&');
+  }
+
   if (url.endsWith('.jpg') || url.endsWith('.png') || url.endsWith('.gif')) {
     return url;
+  } else if (preview) {
+    return unencoded;
   } else {
-    return null;
+    return thumbnail;
   }
 }

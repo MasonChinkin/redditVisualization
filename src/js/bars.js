@@ -5,6 +5,7 @@ import {
 } from './tooltip';
 
 export function drawBars(dataset) {
+
   //create svg container
   const w = visualization.offsetWidth - 70;
   const h = visualization.offsetHeight - 120;
@@ -15,8 +16,9 @@ export function drawBars(dataset) {
     bottom: 100
   }
 
-  const svg = d3.select('#visualization')
+  var svg = d3.select('#visualization')
     .append('svg')
+    .attr('class', 'canvas')
     .attr('width', w + margin.left + margin.right)
     .attr('height', h + margin.top + margin.bottom)
     .append('g')
@@ -24,10 +26,10 @@ export function drawBars(dataset) {
 
   // ease
   const barEase = d3.easeQuadIn;
-  const barTransition = 1000;
+  const barTransition = 500;
 
   // number/date formats
-  const upsFormat = d3.format('.1s')
+  const upsFormat = d3.format('.2s')
 
   // https://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
   const maxUps = d3.max(dataset, d => d.ups);
@@ -73,7 +75,10 @@ export function drawBars(dataset) {
     .data(dataset)
     .enter()
     .append('text')
-    .text(d => upsFormat(d.ups))
+    .on('click', d => window.open(d.permalink))
+    .on('mousemove', barMouseMove)
+    .on('mouseout', barMouseOut)
+    .text(d => (d.ups > 9) ? upsFormat(d.ups) : d.ups)
     .attr('x', (d, indices) => x(indices) + x.bandwidth() / 2)
     .attr('y', h)
     .attr('class', 'barLabel')
