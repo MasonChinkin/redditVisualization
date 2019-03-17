@@ -16,8 +16,26 @@ export function dateRangeNeeded() {
 
 export async function visualize(vizType) {
   let url = getURL();
-  console.log(url);
   const json = await fetch(url).then(res => res.json())
+  let subreddit = document.getElementById('subreddit-input');
+  let sort = document.getElementById('sort-input')
+
+  // error catching
+  if (json.error) {
+
+    subreddit.style.border = '1px solid red';
+    if (sort.value === "Sort") {
+      sort.style.border = '1px solid red'
+      setTimeout(() => alert('Select a sorting type!'), 0) // setTimeout so red border renders before alert
+    } else {
+      setTimeout(() => alert('Subreddit not found!'), 0) // setTimeout so red border renders before alert
+    }
+  }
+
+  if (json.error) return;
+
+  subreddit.style.border = '0';
+  sort.style.border = '0';
 
   const dataset = []
 
@@ -71,7 +89,9 @@ function usableUrl(url, preview, thumbnail) {
     return url;
   } else if (preview) {
     return unencoded;
-  } else {
+  } else if (thumbnail) {
     return thumbnail;
+  } else {
+    return null;
   }
 }

@@ -1,14 +1,14 @@
-import * as d3 from 'd3';
+import * as d3 from 'd3'
 import {
   barMouseMove,
   barMouseOut
-} from './tooltip';
+} from './tooltip'
 
 export function drawBars(dataset) {
 
   //create svg container
-  const w = visualization.offsetWidth - 70;
-  const h = visualization.offsetHeight - 120;
+  const w = visualization.offsetWidth - 70
+  const h = visualization.offsetHeight - 120
   const margin = {
     right: 40,
     left: 30,
@@ -18,7 +18,7 @@ export function drawBars(dataset) {
 
   let oldSvg = d3.select('#visualization')
     .select('svg')
-    .remove();
+    .remove()
 
   let svg = d3.select('#visualization')
     .append('svg')
@@ -28,14 +28,14 @@ export function drawBars(dataset) {
     .attr('transform', `translate(${margin.left},${margin.top})`)
 
   // ease
-  const barEase = d3.easeQuadIn;
-  const barTransition = 500;
+  const barEase = d3.easeQuadIn
+  const barTransition = 500
 
   // number/date formats
   const upsFormat = d3.format('.2s')
 
   // https://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
-  const maxUps = d3.max(dataset, d => d.ups);
+  const maxUps = d3.max(dataset, d => d.ups)
 
   // ranges
   let x = d3.scaleBand()
@@ -49,8 +49,8 @@ export function drawBars(dataset) {
   let indices = d3.range(0, dataset.length)
 
   //scales
-  x.domain(indices);
-  y.domain([0, d3.max(dataset, d => d.ups)]);
+  x.domain(indices)
+  y.domain([0, d3.max(dataset, d => d.ups)])
 
   //BARS
   const bars = svg.selectAll('rect')
@@ -61,8 +61,6 @@ export function drawBars(dataset) {
     .attr('y', h) //for animation
     .attr('width', x.bandwidth())
     .attr('height', d => y(0))
-    .attr('rx', 0)
-    .attr('ry', 0)
     .attr('class', 'bar')
     .on('click', d => window.open(d.permalink))
     .on('mousemove', barMouseMove)
@@ -107,7 +105,7 @@ export function drawBars(dataset) {
   const xAxis = d3.axisBottom()
     .scale(x)
     .tickSize(0)
-    .tickFormat(d => dataset[d].title.slice(0, 21) + "...")
+    .tickFormat(d => (dataset[d].title.length > 20) ? dataset[d].title.slice(0, 20) + "..." : dataset[d].title)
 
   svg.append('g')
     .attr('class', 'xAxis')
@@ -127,7 +125,7 @@ export function drawBars(dataset) {
     .attr('class', 'yAxis')
     .attr('transform', `translate(${-margin.left / 4},${h * 0.6}) rotate(-90)`)
 
-  highlightBarButton();
+  highlightBarButton()
 }
 
 function highlightBarButton() {
