@@ -16,9 +16,12 @@ export function drawBars(dataset) {
     bottom: 100
   }
 
-  var svg = d3.select('#visualization')
+  let oldSvg = d3.select('#visualization')
+    .select('svg')
+    .remove();
+
+  let svg = d3.select('#visualization')
     .append('svg')
-    .attr('class', 'canvas')
     .attr('width', w + margin.left + margin.right)
     .attr('height', h + margin.top + margin.bottom)
     .append('g')
