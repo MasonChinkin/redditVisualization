@@ -1,0 +1,20 @@
+.bubble {
+  cursor: pointer;
+}
+
+.legend-circle {
+  fill: rgb(199, 230, 255);
+  stroke: steelblue;
+}
+
+.legend-label {
+  font-size: 12px;
+  fill: black;
+  text-anchor: middle;
+}
+
+.legend-header {
+  pointer-events: none;
+  text-anchor: middle;
+  font-size: 1.5rem;
+}

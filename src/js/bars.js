@@ -16,10 +16,6 @@ export function drawBars(dataset) {
     bottom: 100
   }
 
-  let oldSvg = d3.select('#visualization')
-    .select('svg')
-    .remove()
-
   let svg = d3.select('#visualization')
     .append('svg')
     .attr('width', w + margin.left + margin.right)
@@ -33,8 +29,6 @@ export function drawBars(dataset) {
 
   // number/date formats
   const upsFormat = d3.format('.2s')
-
-  // https://stackoverflow.com/questions/4020796/finding-the-max-value-of-an-attribute-in-an-array-of-objects
   const maxUps = d3.max(dataset, d => d.ups)
 
   // ranges
@@ -46,10 +40,8 @@ export function drawBars(dataset) {
     .range([0, h - margin.top])
     .clamp(true)
 
-  let indices = d3.range(0, dataset.length)
-
   //scales
-  x.domain(indices)
+  x.domain(d3.range(0, dataset.length))
   y.domain([0, d3.max(dataset, d => d.ups)])
 
   //BARS

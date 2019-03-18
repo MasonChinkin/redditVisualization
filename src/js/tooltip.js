@@ -14,10 +14,10 @@ export const barMouseMove = function (d) {
     .text(d.title)
 
   d3.select('#Posted')
-    .text(postTimeFormat(d.created_utc))
+    .text(postTimeFormat(d.created))
 
   d3.select('#Upvotes')
-    .text(upsFormat(d.ups))
+    .text((d.ups > 9) ? upsFormat(d.ups) : d.ups)
 
   if (d.url) {
     d3.select('#pic')
