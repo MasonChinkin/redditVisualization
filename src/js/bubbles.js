@@ -35,7 +35,7 @@ export function drawBubbles(dataset) {
   let simulation = d3.forceSimulation()
     .force("forceX", d3.forceX().strength(force).x(w * 0.5))
     .force("forceY", d3.forceY().strength(force).y(h * 0.5))
-    .force("center", d3.forceCenter().x(w * 0.4).y(h * 0.45))
+    .force("center", d3.forceCenter().x(w * 0.4).y(h * 0.5))
     .force("charge", d3.forceManyBody().strength(-30));
 
   // sort the nodes so that the bigger ones are at the back
@@ -79,20 +79,23 @@ export function drawBubbles(dataset) {
     .enter()
     .append("circle")
     .attr("class", "legend-circle")
-    .attr("cx", (d, i) => {
+    .attr("cy", (d, i) => {
       let offset;
       if (i === 0) offset = maxUps;
       if (i === 1) offset = (legendData[1] + legendData[0]) / 2
       if (i === 2) offset = (legendData[2] + legendData[0]) / 2
-      return (w * 0.9) - (radiusScale(offset) * 2) * i
+      return (h * 0.85) - ((radiusScale(offset) * 2) * i)
     })
-    .attr("cy", d => h - radiusScale(d) - 1)
+    .attr("cx", d => w - radiusScale(legendData[0]) - 10)
     .attr("r", d => radiusScale(d))
 
   // legend header
   svg.append('text')
     .attr('class', 'legend-header')
-    .attr('transform', `translate(${w * 0.9},${h - (radiusScale(legendData[0]) * 2) - 20})`)
+    .attr('transform', `translate(
+      ${w - radiusScale(legendData[0]) - 10},
+      ${(h * 0.85) - (radiusScale(legendData[0]) + radiusScale(legendData[1]) + radiusScale(legendData[2])) * 2 + 20}
+      )`) //Im not proud of myself for this one
     .text('Upvotes')
 
   // legend labels
@@ -102,11 +105,10 @@ export function drawBubbles(dataset) {
     if (i === 1) offset = (legendData[1] + legendData[0]) / 2
     if (i === 2) offset = (legendData[2] + legendData[0]) / 2
 
-    let labelY = h - radiusScale(label) + 3
-    let labelX = (w * 0.9) - (radiusScale(offset) * 2) * i
+    let labelY = (h * 0.85) - ((radiusScale(offset) * 2) * i) + 3
+    let labelX = w - radiusScale(legendData[0]) - 10
     svg.append('text')
       .attr('class', 'legend-label')
-      // .attr('transform', `translate(${w * 0.9},${(h * 0.6) - radiusScale(legendData[0])}`)
       .attr('transform', `translate(${labelX},${labelY})`)
       .text((label < 10) ? label : upsFormat(label))
   })

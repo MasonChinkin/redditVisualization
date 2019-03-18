@@ -1,5 +1,10 @@
 .bubble {
   cursor: pointer;
+
+  &:hover {
+    stroke: black;
+    stroke-width: 2px;
+  }
 }
 
 .legend-circle {
@@ -16,5 +21,5 @@
 .legend-header {
   pointer-events: none;
   text-anchor: middle;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
