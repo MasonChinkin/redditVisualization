@@ -33,7 +33,8 @@ export const barMouseMove = function (d) {
     .getBoundingClientRect().height;
 
   const xpos = d3.event.offsetX;
-  const ypos = d3.event.offsetY - tooltipHeight;
+  // flip tooltip to not dissapear off top of screen
+  const ypos = (d3.event.clientY > d3.event.view.innerHeight / 2) ? d3.event.offsetY - tooltipHeight : d3.event.offsetY;
 
   //Show the tooltip and update position
   d3.select('#tooltip')
