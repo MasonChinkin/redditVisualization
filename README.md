@@ -10,7 +10,7 @@ This project is meant to highlight vanilla JavaScript skills without the help of
 ## Highlights
 
 ### async data fetch
-Making an async data fetch using a url constructed from the form data.
+Making an async data fetch using a url constructed from use input.
 
 ```javascript
 export async function visualize(vizType) {
