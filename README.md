@@ -5,7 +5,8 @@ This project is meant to highlight vanilla JavaScript skills without the help of
 ## Features
 * Visualize subreddit posts as bars, bubbles, or a scatterplot
 * Preview posts on hover and go to them on click
-* Coming soon- animated transitions between visualization type
+* Tooltip moves relative to mouse to avoid going off screen.
+* Coming soon- animated loading icon and transitions between visualization type
 
 ## Highlights
 
