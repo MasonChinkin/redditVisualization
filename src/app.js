@@ -3,7 +3,8 @@ import * as d3 from 'd3';
 import {
   useSuggestion,
   visualize,
-  dateRangeNeeded
+  dateRangeNeeded,
+  clearSessionStorage
 } from './js/inputs';
 import {
   drawBars
@@ -18,6 +19,9 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   d3.selectAll('.suggestion-list-item')
     .on('click', useSuggestion);
+
+  d3.selectAll('.clear-local')
+    .on('change', clearSessionStorage)
 
   d3.select('#sort-input')
     .on('change', dateRangeNeeded);

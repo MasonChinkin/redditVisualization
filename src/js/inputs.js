@@ -17,25 +17,8 @@ export function dateRangeNeeded() {
 export async function visualize(vizType) {
   let url = getURL();
   const json = await fetch(url).then(res => res.json())
-  let subreddit = document.getElementById('subreddit-input');
-  let sort = document.getElementById('sort-input')
 
-  // error catching
-  if (json.error) {
-
-    subreddit.style.border = '1px solid red';
-    if (sort.value === "Sort") {
-      sort.style.border = '1px solid red'
-      setTimeout(() => alert('Select a sorting type!'), 0) // setTimeout so red border renders before alert
-    } else {
-      setTimeout(() => alert('Subreddit not found!'), 0) // setTimeout so red border renders before alert
-    }
-  }
-
-  if (json.error) return;
-
-  subreddit.style.border = '0';
-  sort.style.border = '0';
+  catchErrors(json)
 
   const dataset = []
 
@@ -43,12 +26,10 @@ export async function visualize(vizType) {
     dataset.push({
       id: json.data.children[i].data.id,
       ups: json.data.children[i].data.ups,
-      // downs: json.data.children[i].data.downs,
       author: json.data.children[i].data.author,
       created: new Date(json.data.children[i].data.created_utc * 1000),
       numComments: json.data.children[i].data.num_comments,
       permalink: 'https://www.reddit.com' + json.data.children[i].data.permalink,
-      // score: json.data.children[i].data.score,
       subreddit: json.data.children[i].data.subreddit_name_prefixed,
       title: json.data.children[i].data.title,
       url: usableUrl(
@@ -61,20 +42,10 @@ export async function visualize(vizType) {
 
   dataset.sort((a, b) => b.ups - a.ups)
 
-  //remove any previous viz
-  d3.select('#visualization')
-    .select('svg')
-    .remove()
+  sessionStorage.setItem('dataset', JSON.stringify(dataset))
 
-  vizType(dataset)
-  window.addEventListener('resize', () => {
-    d3.select('#visualization')
-      .select('svg')
-      .remove()
-
-    //remove any previous viz
-    vizType(dataset)
-  })
+  redraw(dataset, vizType)
+  window.addEventListener('resize', () => redraw(dataset, vizType))
 }
 
 function getURL() {
@@ -106,4 +77,40 @@ function usableUrl(url, preview, thumbnail) {
   } else {
     return null;
   }
+}
+
+function redraw(dataset, vizType) {
+  d3.select('#visualization')
+    .select('svg')
+    .remove()
+
+  //remove any previous viz
+  vizType(dataset)
+}
+
+//clear local storage on input change
+export function clearSessionStorage() {
+  sessionStorage.removeItem('data')
+}
+
+function catchErrors(json) {
+  let subreddit = document.getElementById('subreddit-input');
+  let sort = document.getElementById('sort-input')
+
+  // error catching
+  if (json.error) {
+
+    subreddit.style.border = '1px solid red';
+    if (sort.value === "Sort") {
+      sort.style.border = '1px solid red'
+      setTimeout(() => alert('Select a sorting type!'), 0) // setTimeout so red border renders before alert
+    } else {
+      setTimeout(() => alert('Subreddit not found!'), 0) // setTimeout so red border renders before alert
+    }
+  }
+
+  if (json.error) return;
+
+  subreddit.style.border = '0';
+  sort.style.border = '0';
 }
