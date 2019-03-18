@@ -5,6 +5,11 @@ import {
 } from './tooltip';
 
 export function drawScatter(dataset) {
+  // quick fix for stickied posts destroying time scale
+  dataset = dataset.filter(post => !post.title.includes('Reminder'))
+  dataset = dataset.filter(post => !post.title.includes('Rule'))
+  dataset = dataset.filter(post => !post.title.includes('rule'))
+
   //BOX
   const w = visualization.offsetWidth
   const h = visualization.offsetHeight

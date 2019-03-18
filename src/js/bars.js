@@ -49,7 +49,7 @@ export function drawBars(dataset) {
     .data(dataset)
     .enter()
     .append('rect')
-    .attr('x', (d, indices) => x(indices))
+    .attr('x', (d, i) => x(i))
     .attr('y', h) //for animation
     .attr('width', x.bandwidth())
     .attr('height', d => y(0))
@@ -68,11 +68,8 @@ export function drawBars(dataset) {
     .data(dataset)
     .enter()
     .append('text')
-    .on('click', d => window.open(d.permalink))
-    .on('mousemove', barMouseMove)
-    .on('mouseout', barMouseOut)
     .text(d => (d.ups > 9) ? upsFormat(d.ups) : d.ups)
-    .attr('x', (d, indices) => x(indices) + x.bandwidth() / 2)
+    .attr('x', (d, i) => x(i) + x.bandwidth() / 2)
     .attr('y', h)
     .attr('class', 'barLabel')
     .transition('start')
@@ -92,6 +89,20 @@ export function drawBars(dataset) {
         return 'black'
       }
     })
+
+  //transparent rect for hovering over numbers
+  const hoverRect = svg.selectAll('.hover-rect')
+    .data(dataset)
+    .enter()
+    .append('rect')
+    .attr('class', 'hover-rect')
+    .attr('x', (d, i) => x(i))
+    .attr('y', d => h - y(d.ups) - 20)
+    .attr('width', x.bandwidth())
+    .attr('height', d => (d.ups >= maxUps / 20) ? 0 : 20)
+    .on('click', d => window.open(d.permalink))
+    .on('mousemove', barMouseMove)
+    .on('mouseout', barMouseOut)
 
   //x axis
   const xAxis = d3.axisBottom()

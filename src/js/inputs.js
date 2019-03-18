@@ -43,12 +43,12 @@ export async function visualize(vizType) {
     dataset.push({
       id: json.data.children[i].data.id,
       ups: json.data.children[i].data.ups,
-      downs: json.data.children[i].data.downs,
+      // downs: json.data.children[i].data.downs,
       author: json.data.children[i].data.author,
       created: new Date(json.data.children[i].data.created_utc * 1000),
       numComments: json.data.children[i].data.num_comments,
       permalink: 'https://www.reddit.com' + json.data.children[i].data.permalink,
-      score: json.data.children[i].data.score,
+      // score: json.data.children[i].data.score,
       subreddit: json.data.children[i].data.subreddit_name_prefixed,
       title: json.data.children[i].data.title,
       url: usableUrl(

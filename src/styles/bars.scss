@@ -8,9 +8,13 @@
   }
 }
 
+.hover-rect {
+  opacity: 0;
+  cursor: pointer;
+}
+
 .barLabel {
   font-size: 12px;
-  cursor: pointer;
 }
 
 .xAxis text {
