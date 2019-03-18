@@ -82,8 +82,7 @@ function getURL() {
   let sort = document.getElementById('sort-input').value;
   let dateRange = document.getElementById('date-range').value;
 
-  let url = `https://www.reddit.com/r/${subreddit}/${sort}`;
-  url += ".json";
+  let url = `https://www.reddit.com/r/${subreddit}/${sort}.json`;
   if (sort === "top") {
     url += `?t=${dateRange}`;
   }
