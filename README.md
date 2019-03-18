@@ -34,14 +34,26 @@ function getURL() {
   let sort = document.getElementById('sort-input').value;
   let dateRange = document.getElementById('date-range').value;
 
-  let url = `https://www.reddit.com/r/${subreddit}/${sort}`;
-  url += ".json";
+  let url = `https://www.reddit.com/r/${subreddit}/${sort}.json`;
   if (sort === "top") {
     url += `?t=${dateRange}`;
   }
 
   return url;
 }
+```
+
+### Keep tooltip onscreen with d3.event turnary
+```javascript
+// flips tooltip to other side of mouse at the middle of browser window
+const xpos = (d3.event.clientX > d3.event.view.innerWidth / 2) ? d3.event.offsetX - tooltipWidth : d3.event.offsetX;
+const ypos = (d3.event.clientY > d3.event.view.innerHeight / 2) ? d3.event.offsetY - tooltipHeight : d3.event.offsetY;
+
+//Show the tooltip and update position
+d3.select('#tooltip')
+  .classed('hidden', false)
+  .style('left', xpos + 'px')
+  .style('top', ypos + 'px')
 ```
 
 ### Clean UI/UX
