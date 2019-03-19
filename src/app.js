@@ -22,8 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
   d3.selectAll('.suggestion-list-item')
     .on('click', useSuggestion);
 
-  d3.selectAll('.clear-local')
-    .on('change', () => sessionStorage.removeItem('dataset'));
+  document.querySelectorAll('.clear-local').forEach(function (el) {
+    el.addEventListener('change', () => sessionStorage.clear())
+  })
 
   d3.select('#sort-input')
     .on('change', dateRangeNeeded);

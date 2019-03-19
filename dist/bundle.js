@@ -29697,8 +29697,9 @@ document.addEventListener("DOMContentLoaded", () => {
   d3__WEBPACK_IMPORTED_MODULE_1__["selectAll"]('.suggestion-list-item')
     .on('click', _js_utils__WEBPACK_IMPORTED_MODULE_6__["useSuggestion"]);
 
-  d3__WEBPACK_IMPORTED_MODULE_1__["selectAll"]('.clear-local')
-    .on('change', () => sessionStorage.removeItem('dataset'));
+  document.querySelectorAll('.clear-local').forEach(function (el) {
+    el.addEventListener('change', () => sessionStorage.clear())
+  })
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#sort-input')
     .on('change', _js_utils__WEBPACK_IMPORTED_MODULE_6__["dateRangeNeeded"]);
