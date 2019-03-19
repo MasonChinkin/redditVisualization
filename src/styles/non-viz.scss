@@ -10,16 +10,11 @@ header {
   justify-content: space-evenly;
   align-items: center;
   background: white;
-  padding: 15px 0;
-  margin-bottom: 10px;
+  padding: 10px 0;
+  margin-bottom: 5px;
 
   &>h1 {
     font-size: 28px;
-    margin-bottom: 10px;
-  }
-
-  &>h2 {
-    font-size: 18px;
   }
 }
 
@@ -56,14 +51,14 @@ main {
 }
 
 .instructions {
-  padding: 10px;
+  padding: 8px;
   background: white;
   border-radius: 5px;
 
   h1 {
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   ul {

@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/di
 exports.i(__webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./styles/_reset.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/_reset.css"), "");
 
 // Module
-exports.push([module.i, "body {\n  font-family: 'Roboto', sans-serif;\n  background: #d2dce6; }\n\nheader {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  align-items: center;\n  background: white;\n  padding: 15px 0;\n  margin-bottom: 10px; }\n  header > h1 {\n    font-size: 28px;\n    margin-bottom: 10px; }\n  header > h2 {\n    font-size: 18px; }\n\n.links {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  background: white;\n  width: 100%;\n  bottom: 0;\n  height: 5vh; }\n  .links > * {\n    margin-right: 60px; }\n  .links::last-child {\n    margin-right: 0; }\n\nfooter > a {\n  position: fixed;\n  bottom: 0;\n  font-size: 1px;\n  color: white; }\n\nmain {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.instructions {\n  padding: 10px;\n  background: white;\n  border-radius: 5px; }\n  .instructions h1 {\n    font-size: 16px;\n    font-weight: 500;\n    margin-bottom: 10px; }\n  .instructions ul {\n    font-weight: 300;\n    display: flex;\n    flex-direction: column; }\n  .instructions li {\n    font-size: 16px;\n    margin-left: 22px;\n    margin-bottom: 5px;\n    list-style-type: square; }\n    .instructions li:last-child {\n      margin-bottom: 0; }\n\n.inputs {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  height: 30px;\n  margin: 10px 0;\n  font-size: 13px;\n  font-weight: lighter; }\n  .inputs > * {\n    margin-right: 5px; }\n  .inputs > *::last-child {\n    margin-right: 0; }\n\n#subreddit-input {\n  border-radius: 5px;\n  width: 200px;\n  padding: 0 8px;\n  margin-right: 5px;\n  font-size: 13px;\n  height: 100%;\n  font-weight: 300; }\n  #subreddit-input::placeholder {\n    font-size: 13px; }\n\n.suggestions {\n  height: 30px;\n  transition: all .4s;\n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  display: flex;\n  flex-direction: column;\n  padding: 8px 10px;\n  border-radius: 5px; }\n  .suggestions:hover {\n    height: 122px;\n    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);\n    background-image: none; }\n    .suggestions:hover h1 {\n      font-weight: bold;\n      pointer-events: none; }\n  .suggestions > div {\n    display: flex;\n    justify-content: space-between; }\n  .suggestions h1 {\n    margin-bottom: 8px; }\n  .suggestions > ul {\n    display: flex;\n    flex-direction: column; }\n  .suggestions li {\n    cursor: pointer;\n    font-weight: 300;\n    margin-bottom: 5px; }\n    .suggestions li:active {\n      background: lightgrey; }\n  .suggestions li:last-child {\n    margin-bottom: 0; }\n\n.submit {\n  cursor: pointer;\n  border-radius: 5px;\n  font-size: 13px;\n  font-weight: 500;\n  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); }\n  .submit:hover {\n    filter: brightness(80%); }\n  .submit:active {\n    position: relative;\n    top: 3px;\n    left: 3px;\n    box-shadow: none; }\n\n.barLabel {\n  text-anchor: middle;\n  pointer-events: none;\n  font-size: 14px;\n  font-family: sans-serif;\n  pointer-events: none; }\n\n#tooltip {\n  position: absolute;\n  width: 300px;\n  max-height: 600px;\n  padding: 10px;\n  background-color: white;\n  border-radius: 5px;\n  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);\n  pointer-events: none;\n  z-index: 2; }\n  #tooltip > * {\n    margin-bottom: 10px; }\n  #tooltip:last-child {\n    margin-bottom: none; }\n\n#tooltip.hidden {\n  display: none; }\n\n#tooltip h1 {\n  font-size: 20px;\n  color: black;\n  font-weight: 600; }\n\n#tooltip h2 {\n  font-size: 16px;\n  font-weight: 500; }\n  #tooltip h2 > span {\n    font-weight: 300; }\n\n#pic {\n  width: 100%; }\n\n.no-image {\n  height: 100px !important; }\n\n.bar {\n  fill: #4e92c9;\n  transition: fill 0.3s;\n  cursor: pointer; }\n  .bar:hover {\n    fill: #326a97; }\n\n.hover-rect {\n  opacity: 0;\n  cursor: pointer; }\n\n.barLabel {\n  font-size: 12px; }\n\n.xAxis text {\n  pointer-events: none;\n  text-anchor: start;\n  font-size: 12px;\n  transform: rotate(45deg); }\n\n.yAxis text {\n  text-anchor: middle;\n  font-weight: bold;\n  font-size: 20px;\n  pointer-events: none; }\n\n.bubble {\n  cursor: pointer; }\n  .bubble:hover {\n    stroke: black;\n    stroke-width: 2px; }\n\n.legend-circle {\n  fill: #c7e6ff;\n  stroke: steelblue; }\n\n.legend-label {\n  font-size: 12px;\n  fill: black;\n  text-anchor: middle; }\n\n.legend-header {\n  pointer-events: none;\n  text-anchor: middle;\n  font-size: 1.3rem; }\n\n.axis {\n  pointer-events: none; }\n\n#visualization {\n  background: white;\n  width: 90vw;\n  height: 65vh; }\n\n.visualization-container {\n  position: relative; }\n\n.visualization-options {\n  display: flex;\n  justify-content: flex-end;\n  position: absolute;\n  height: 42px;\n  top: 3px;\n  right: 3px; }\n  .visualization-options > * {\n    cursor: pointer;\n    margin-left: 10px;\n    border-radius: 3px;\n    width: 42px; }\n\n.material-icons {\n  font-size: 30px; }\n\n.fa-chart-bar {\n  font-size: 28px; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Roboto', sans-serif;\n  background: #d2dce6; }\n\nheader {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-evenly;\n  align-items: center;\n  background: white;\n  padding: 10px 0;\n  margin-bottom: 5px; }\n  header > h1 {\n    font-size: 28px; }\n\n.links {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  background: white;\n  width: 100%;\n  bottom: 0;\n  height: 5vh; }\n  .links > * {\n    margin-right: 60px; }\n  .links::last-child {\n    margin-right: 0; }\n\nfooter > a {\n  position: fixed;\n  bottom: 0;\n  font-size: 1px;\n  color: white; }\n\nmain {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.instructions {\n  padding: 8px;\n  background: white;\n  border-radius: 5px; }\n  .instructions h1 {\n    font-size: 16px;\n    font-weight: 500;\n    margin-bottom: 5px; }\n  .instructions ul {\n    font-weight: 300;\n    display: flex;\n    flex-direction: column; }\n  .instructions li {\n    font-size: 16px;\n    margin-left: 22px;\n    margin-bottom: 5px;\n    list-style-type: square; }\n    .instructions li:last-child {\n      margin-bottom: 0; }\n\n.inputs {\n  display: flex;\n  width: 100%;\n  justify-content: center;\n  height: 30px;\n  margin: 5px 0;\n  font-size: 13px;\n  font-weight: lighter; }\n  .inputs > * {\n    margin-right: 5px; }\n  .inputs > *::last-child {\n    margin-right: 0; }\n\n#subreddit-input {\n  border-radius: 5px;\n  width: 200px;\n  padding: 0 8px;\n  margin-right: 5px;\n  font-size: 13px;\n  height: 100%;\n  font-weight: 300; }\n  #subreddit-input::placeholder {\n    font-size: 13px; }\n\n.suggestions {\n  height: 30px;\n  transition: all .4s;\n  overflow: hidden;\n  background: white;\n  z-index: 1;\n  display: flex;\n  flex-direction: column;\n  padding: 8px 10px;\n  border-radius: 5px; }\n  .suggestions:hover {\n    height: 122px;\n    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);\n    background-image: none; }\n    .suggestions:hover h1 {\n      font-weight: bold;\n      pointer-events: none; }\n  .suggestions > div {\n    display: flex;\n    justify-content: space-between; }\n  .suggestions h1 {\n    margin-bottom: 8px; }\n  .suggestions > ul {\n    display: flex;\n    flex-direction: column; }\n  .suggestions li {\n    cursor: pointer;\n    font-weight: 300;\n    margin-bottom: 5px; }\n    .suggestions li:active {\n      background: lightgrey; }\n  .suggestions li:last-child {\n    margin-bottom: 0; }\n\n.submit {\n  cursor: pointer;\n  border-radius: 5px;\n  font-size: 13px;\n  font-weight: 500;\n  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); }\n  .submit:hover {\n    filter: brightness(80%); }\n  .submit:active {\n    position: relative;\n    top: 3px;\n    left: 3px;\n    box-shadow: none; }\n\n.barLabel {\n  text-anchor: middle;\n  pointer-events: none;\n  font-size: 14px;\n  font-family: sans-serif;\n  pointer-events: none; }\n\n#tooltip {\n  position: absolute;\n  width: 300px;\n  max-height: 600px;\n  padding: 10px;\n  background-color: white;\n  border-radius: 5px;\n  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);\n  pointer-events: none;\n  z-index: 2; }\n  #tooltip > * {\n    margin-bottom: 10px; }\n  #tooltip:last-child {\n    margin-bottom: none; }\n\n#tooltip.hidden {\n  display: none; }\n\n#tooltip h1 {\n  font-size: 20px;\n  color: black;\n  font-weight: 600; }\n\n#tooltip h2 {\n  font-size: 16px;\n  font-weight: 500; }\n  #tooltip h2 > span {\n    font-weight: 300; }\n\n#pic {\n  width: 100%; }\n\n.no-image {\n  height: 100px !important; }\n\n.bar {\n  fill: #4e92c9;\n  transition: fill 0.3s;\n  cursor: pointer; }\n  .bar:hover {\n    fill: #326a97; }\n\n.hover-rect {\n  opacity: 0;\n  cursor: pointer; }\n\n.barLabel {\n  font-size: 12px; }\n\n.xAxis text {\n  pointer-events: none;\n  text-anchor: start;\n  font-size: 12px;\n  transform: rotate(45deg); }\n\n.yAxis text {\n  text-anchor: middle;\n  font-weight: bold;\n  font-size: 20px;\n  pointer-events: none; }\n\n.bubble {\n  cursor: pointer; }\n  .bubble:hover {\n    stroke: black;\n    stroke-width: 2px; }\n\n.legend-circle {\n  fill: #c7e6ff;\n  stroke: steelblue; }\n\n.legend-label {\n  font-size: 12px;\n  fill: black;\n  text-anchor: middle; }\n\n.legend-header {\n  pointer-events: none;\n  text-anchor: middle;\n  font-size: 1.3rem; }\n\n.axis {\n  pointer-events: none; }\n\n#visualization {\n  background: white;\n  width: 90vw;\n  height: 67vh; }\n\n.visualization-container {\n  position: relative; }\n\n.visualization-options {\n  display: flex;\n  justify-content: flex-end;\n  position: absolute;\n  height: 42px;\n  top: 3px;\n  right: 3px; }\n  .visualization-options > * {\n    cursor: pointer;\n    margin-left: 10px;\n    border-radius: 3px;\n    width: 42px; }\n\n.material-icons {\n  font-size: 30px; }\n\n.fa-chart-bar {\n  font-size: 28px; }\n", ""]);
 
 
 
@@ -29683,6 +29683,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_bars__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/bars */ "./src/js/bars.js");
 /* harmony import */ var _js_bubbles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/bubbles */ "./src/js/bubbles.js");
 /* harmony import */ var _js_scatter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/scatter */ "./src/js/scatter.js");
+/* harmony import */ var _js_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/utils */ "./src/js/utils.js");
 
 
 
@@ -29690,27 +29691,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+sessionStorage.clear();
 document.addEventListener("DOMContentLoaded", () => {
   d3__WEBPACK_IMPORTED_MODULE_1__["selectAll"]('.suggestion-list-item')
-    .on('click', _js_inputs__WEBPACK_IMPORTED_MODULE_2__["useSuggestion"]);
+    .on('click', _js_utils__WEBPACK_IMPORTED_MODULE_6__["useSuggestion"]);
 
   d3__WEBPACK_IMPORTED_MODULE_1__["selectAll"]('.clear-local')
-    .on('change', _js_inputs__WEBPACK_IMPORTED_MODULE_2__["clearSessionStorage"])
+    .on('change', () => sessionStorage.removeItem('dataset'));
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#sort-input')
-    .on('change', _js_inputs__WEBPACK_IMPORTED_MODULE_2__["dateRangeNeeded"]);
+    .on('change', _js_utils__WEBPACK_IMPORTED_MODULE_6__["dateRangeNeeded"]);
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('.submit')
     .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"]));
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#bar-button')
-    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"]))
+    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_bars__WEBPACK_IMPORTED_MODULE_3__["drawBars"]));
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#bubble-button')
-    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_bubbles__WEBPACK_IMPORTED_MODULE_4__["drawBubbles"]))
+    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_bubbles__WEBPACK_IMPORTED_MODULE_4__["drawBubbles"]));
 
   d3__WEBPACK_IMPORTED_MODULE_1__["select"]('#scatter-button')
-    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_scatter__WEBPACK_IMPORTED_MODULE_5__["drawScatter"]))
+    .on('click', () => Object(_js_inputs__WEBPACK_IMPORTED_MODULE_2__["visualize"])(_js_scatter__WEBPACK_IMPORTED_MODULE_5__["drawScatter"]));
 });
 
 /***/ }),
@@ -30079,64 +30082,51 @@ function highlightBubbleButton() {
 /*!**************************!*\
   !*** ./src/js/inputs.js ***!
   \**************************/
-/*! exports provided: useSuggestion, dateRangeNeeded, visualize, clearSessionStorage */
+/*! exports provided: visualize */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSuggestion", function() { return useSuggestion; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateRangeNeeded", function() { return dateRangeNeeded; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "visualize", function() { return visualize; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearSessionStorage", function() { return clearSessionStorage; });
-/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
-
-function useSuggestion() {
-  let val = this.innerHTML;
-  let input = document.getElementById('subreddit-input');
-
-  input.value = val;
-}
-
-function dateRangeNeeded() {
-  let dateRangeInput = document.getElementById('date-range')
-  let sortVal = document.getElementById('sort-input').value
-
-  dateRangeInput.disabled = (sortVal === "top") ? false : true
-}
 
 async function visualize(vizType) {
-  let url = getURL();
-  const json = await fetch(url).then(res => res.json())
+  let dataset;
+  if (!sessionStorage.getItem('dataset')) {
+    let url = getURL();
+    const json = await fetch(url).then(res => res.json())
+    Object(_utils__WEBPACK_IMPORTED_MODULE_0__["catchErrors"])(json)
+    dataset = []
 
-  catchErrors(json)
+    for (var i = 0; i < 20; i++) {
+      dataset.push({
+        id: json.data.children[i].data.id,
+        ups: json.data.children[i].data.ups,
+        author: json.data.children[i].data.author,
+        createdString: new Date(json.data.children[i].data.created_utc * 1000).toString(),
+        numComments: json.data.children[i].data.num_comments,
+        permalink: 'https://www.reddit.com' + json.data.children[i].data.permalink,
+        subreddit: json.data.children[i].data.subreddit_name_prefixed,
+        title: json.data.children[i].data.title,
+        url: Object(_utils__WEBPACK_IMPORTED_MODULE_0__["usableUrl"])(
+          json.data.children[i].data.url,
+          (json.data.children[i].data.preview) ? json.data.children[i].data.preview.images[0].source.url : null,
+          json.data.children[i].data.thumbnail
+        ),
+      })
+    }
 
-  const dataset = []
-
-  for (var i = 0; i < 20; i++) {
-    dataset.push({
-      id: json.data.children[i].data.id,
-      ups: json.data.children[i].data.ups,
-      author: json.data.children[i].data.author,
-      created: new Date(json.data.children[i].data.created_utc * 1000),
-      numComments: json.data.children[i].data.num_comments,
-      permalink: 'https://www.reddit.com' + json.data.children[i].data.permalink,
-      subreddit: json.data.children[i].data.subreddit_name_prefixed,
-      title: json.data.children[i].data.title,
-      url: usableUrl(
-        json.data.children[i].data.url,
-        (json.data.children[i].data.preview) ? json.data.children[i].data.preview.images[0].source.url : null,
-        json.data.children[i].data.thumbnail
-      ),
-    })
+    dataset.sort((a, b) => b.ups - a.ups)
+    sessionStorage.setItem('dataset', JSON.stringify(dataset))
+  } else {
+    dataset = JSON.parse(sessionStorage.getItem('dataset'))
   }
 
-  dataset.sort((a, b) => b.ups - a.ups)
+  console.log(dataset);
 
-  sessionStorage.setItem('dataset', JSON.stringify(dataset))
-
-  redraw(dataset, vizType)
-  window.addEventListener('resize', () => redraw(dataset, vizType))
+  Object(_utils__WEBPACK_IMPORTED_MODULE_0__["redraw"])(dataset, vizType)
+  window.addEventListener('resize', () => Object(_utils__WEBPACK_IMPORTED_MODULE_0__["redraw"])(dataset, vizType))
 }
 
 function getURL() {
@@ -30150,60 +30140,6 @@ function getURL() {
   }
 
   return url;
-}
-
-//function to only include urls that can be previewed (jpgs)
-function usableUrl(url, preview, thumbnail) {
-  let unencoded;
-  if (preview) {
-    unencoded = preview.split('&amp;').join('&');
-  }
-
-  if (url.endsWith('.jpg') || url.endsWith('.png') || url.endsWith('.gif')) {
-    return url;
-  } else if (preview) {
-    return unencoded;
-  } else if (thumbnail) {
-    return thumbnail;
-  } else {
-    return null;
-  }
-}
-
-function redraw(dataset, vizType) {
-  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#visualization')
-    .select('svg')
-    .remove()
-
-  //remove any previous viz
-  vizType(dataset)
-}
-
-//clear local storage on input change
-function clearSessionStorage() {
-  sessionStorage.removeItem('data')
-}
-
-function catchErrors(json) {
-  let subreddit = document.getElementById('subreddit-input');
-  let sort = document.getElementById('sort-input')
-
-  // error catching
-  if (json.error) {
-
-    subreddit.style.border = '1px solid red';
-    if (sort.value === "Sort") {
-      sort.style.border = '1px solid red'
-      setTimeout(() => alert('Select a sorting type!'), 0) // setTimeout so red border renders before alert
-    } else {
-      setTimeout(() => alert('Subreddit not found!'), 0) // setTimeout so red border renders before alert
-    }
-  }
-
-  if (json.error) return;
-
-  subreddit.style.border = '0';
-  sort.style.border = '0';
 }
 
 /***/ }),
@@ -30224,6 +30160,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function drawScatter(dataset) {
+
+  console.log(dataset);
   // quick fix for stickied posts destroying time scale
   dataset = dataset.filter(post => !post.title.includes('Reminder'))
   dataset = dataset.filter(post => !post.title.includes('Rule'))
@@ -30238,7 +30176,7 @@ function drawScatter(dataset) {
 
   //DEFINE SCALES
   const xScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleTime"]()
-    .domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](dataset, d => d.created), new Date()])
+    .domain([d3__WEBPACK_IMPORTED_MODULE_0__["min"](dataset, d => new Date(d.createdString)), new Date()])
     .range([margin, w - margin - 20])
 
   const yScale = d3__WEBPACK_IMPORTED_MODULE_0__["scaleLinear"]()
@@ -30282,7 +30220,7 @@ function drawScatter(dataset) {
     .append('circle')
     .attr('class', 'bubble')
     .attr('fill', d => color(d.id))
-    .attr('cx', d => xScale(d.created))
+    .attr('cx', d => xScale(new Date(d.createdString)))
     .attr('cy', d => yScale(d.numComments))
     .attr('r', d => radiusScale(d.ups))
     .on('click', d => window.open(d.permalink))
@@ -30446,6 +30384,88 @@ const barMouseOut = function (d) {
 
   // Hide the tooltip
   d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#tooltip').classed('hidden', true)
+}
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: usableUrl, redraw, catchErrors, useSuggestion, dateRangeNeeded */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usableUrl", function() { return usableUrl; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "redraw", function() { return redraw; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "catchErrors", function() { return catchErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSuggestion", function() { return useSuggestion; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dateRangeNeeded", function() { return dateRangeNeeded; });
+/* harmony import */ var d3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! d3 */ "./node_modules/d3/index.js");
+
+
+//function to only include urls that can be previewed (jpgs)
+function usableUrl(url, preview, thumbnail) {
+  let unencoded;
+  if (preview) {
+    unencoded = preview.split('&amp;').join('&');
+  }
+
+  if (url.endsWith('.jpg') || url.endsWith('.png') || url.endsWith('.gif')) {
+    return url;
+  } else if (preview) {
+    return unencoded;
+  } else if (thumbnail) {
+    return thumbnail;
+  } else {
+    return null;
+  }
+}
+
+function redraw(dataset, vizType) {
+  d3__WEBPACK_IMPORTED_MODULE_0__["select"]('#visualization')
+    .select('svg')
+    .remove()
+
+  //remove any previous viz
+  vizType(dataset)
+}
+
+function catchErrors(json) {
+  let subreddit = document.getElementById('subreddit-input');
+  let sort = document.getElementById('sort-input')
+
+  // error catching
+  if (json.error) {
+
+    subreddit.style.border = '1px solid red';
+    if (sort.value === "Sort") {
+      sort.style.border = '1px solid red'
+      setTimeout(() => alert('Select a sorting type!'), 0) // setTimeout so red border renders before alert
+    } else {
+      setTimeout(() => alert('Subreddit not found!'), 0) // setTimeout so red border renders before alert
+    }
+  }
+
+  if (json.error) return;
+
+  subreddit.style.border = '0';
+  sort.style.border = '0';
+}
+
+function useSuggestion() {
+  let val = this.innerHTML;
+  let input = document.getElementById('subreddit-input');
+
+  input.value = val;
+}
+
+function dateRangeNeeded() {
+  let dateRangeInput = document.getElementById('date-range')
+  let sortVal = document.getElementById('sort-input').value
+
+  dateRangeInput.disabled = (sortVal === "top") ? false : true
 }
 
 /***/ })

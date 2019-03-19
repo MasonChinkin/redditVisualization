@@ -5,6 +5,8 @@ import {
 } from './tooltip';
 
 export function drawScatter(dataset) {
+
+  console.log(dataset);
   // quick fix for stickied posts destroying time scale
   dataset = dataset.filter(post => !post.title.includes('Reminder'))
   dataset = dataset.filter(post => !post.title.includes('Rule'))
@@ -19,7 +21,7 @@ export function drawScatter(dataset) {
 
   //DEFINE SCALES
   const xScale = d3.scaleTime()
-    .domain([d3.min(dataset, d => d.created), new Date()])
+    .domain([d3.min(dataset, d => new Date(d.createdString)), new Date()])
     .range([margin, w - margin - 20])
 
   const yScale = d3.scaleLinear()
@@ -63,7 +65,7 @@ export function drawScatter(dataset) {
     .append('circle')
     .attr('class', 'bubble')
     .attr('fill', d => color(d.id))
-    .attr('cx', d => xScale(d.created))
+    .attr('cx', d => xScale(new Date(d.createdString)))
     .attr('cy', d => yScale(d.numComments))
     .attr('r', d => radiusScale(d.ups))
     .on('click', d => window.open(d.permalink))
