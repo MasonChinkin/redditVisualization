@@ -36,7 +36,6 @@ export async function visualize(vizType) {
     dataset = JSON.parse(sessionStorage.getItem('dataset'))
   }
 
-  console.log(dataset);
 
   redraw(dataset, vizType)
   window.addEventListener('resize', () => redraw(dataset, vizType))

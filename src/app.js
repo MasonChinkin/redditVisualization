@@ -20,11 +20,15 @@ import {
 sessionStorage.clear();
 document.addEventListener("DOMContentLoaded", () => {
   d3.selectAll('.suggestion-list-item')
-    .on('click', useSuggestion);
+    .on('click', useSuggestion)
 
   document.querySelectorAll('.clear-local').forEach(function (el) {
     el.addEventListener('change', () => sessionStorage.clear())
   })
+
+  d3.select('#subreddit-input')
+    .on('change', () => sessionStorage.clear())
+    .on('blur', () => sessionStorage.clear()) // change isn't triggering consistently for some reason
 
   d3.select('#sort-input')
     .on('change', dateRangeNeeded);

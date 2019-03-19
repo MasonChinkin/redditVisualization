@@ -14,7 +14,7 @@ export const barMouseMove = function (d) {
     .text(d.title)
 
   d3.select('#Posted')
-    .text(postTimeFormat(d.created))
+    .text(postTimeFormat(new Date(d.createdString)))
 
   d3.select('#Upvotes')
     .text((d.ups > 9) ? upsFormat(d.ups) : d.ups)

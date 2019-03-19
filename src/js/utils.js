@@ -54,6 +54,7 @@ export function useSuggestion() {
   let input = document.getElementById('subreddit-input');
 
   input.value = val;
+  sessionStorage.clear() // onchange isn't triggering consistenty in #subreddit-input
 }
 
 export function dateRangeNeeded() {

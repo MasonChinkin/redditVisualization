@@ -6,7 +6,6 @@ import {
 
 export function drawScatter(dataset) {
 
-  console.log(dataset);
   // quick fix for stickied posts destroying time scale
   dataset = dataset.filter(post => !post.title.includes('Reminder'))
   dataset = dataset.filter(post => !post.title.includes('Rule'))
