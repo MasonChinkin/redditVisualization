@@ -2,7 +2,7 @@
 
 [Live Demo](https://masonchinkin.github.io/redditVisualization/)
 
-This project is meant to highlight vanilla JavaScript skills without the help of React/Redux. I decided to have some fun visualizing the json data one can fetch by putting '.json' at the end of most reddit URLs ([example](https://www.reddit.com/hot.json))
+This project is meant to highlight vanilla JavaScript skills without the help of React/Redux. I decided to have some fun visualizing the JSON data one can fetch by putting '.json' at the end of most reddit URLs ([example](https://www.reddit.com/hot.json))
 
 ## Technologies
 * DOM manipulation with vanilla javascript and d3
