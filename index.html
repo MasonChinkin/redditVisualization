@@ -7,18 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  <link rel='stylesheet'
+    href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
     integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
     crossorigin='anonymous'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- icons -->
 
   <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+    rel="stylesheet">
   <!-- fonts -->
 
-  <script src="./dist//bundle.js"></script>
+  <!-- fav icon -->
+  <link rel="icon" type="image/png" href="dist/favicon.png">
+  <!-- fav icon -->
+
+  <script src="./dist/bundle.js"></script>
   <title>Reddit Visualization</title>
 </head>
 
@@ -55,8 +63,8 @@
           <li class="suggestion-list-item">DataIsBeautiful</li>
         </ul>
       </div>
-      <input type="text" name="subreddit" class="clear-local" id="subreddit-input"
-        placeholder="subreddit name">
+      <input type="text" name="subreddit" class="clear-local"
+        id="subreddit-input" placeholder="subreddit name">
       <select name="sort" class="clear-local" id="sort-input">
         <option selected="selected" value="Sort">----- Sort -----</option>
         <option value="hot">Hot</option>
@@ -78,8 +86,10 @@
     <section class="visualization-container">
       <div class="visualization-options">
         <button id="bar-button"><i class="far fa-chart-bar"></i></button>
-        <button id="bubble-button"><i class="material-icons">bubble_chart</i></button>
-        <button id="scatter-button"><img src="https://img.icons8.com/metro/26/000000/scatter-plot.png"></button>
+        <button id="bubble-button"><i
+            class="material-icons">bubble_chart</i></button>
+        <button id="scatter-button"><img
+            src="https://img.icons8.com/metro/26/000000/scatter-plot.png"></button>
       </div>
       <div id="visualization">
       </div>

@@ -1,15 +1,27 @@
 import {
   usableUrl,
   catchErrors,
-  redraw
+  redraw,
+  subredditNotFound
 } from "./utils";
 
 export async function visualize(vizType) {
   let dataset;
   if (!sessionStorage.getItem('dataset')) {
     let url = getURL();
-    const json = await fetch(url).then(res => res.json())
-    catchErrors(json)
+    let json;
+    try {
+      json = await fetch(url).then(res => res.json())
+      catchErrors(json)
+    } catch (err) {
+      console.log(err);
+      subredditNotFound();
+      console.clear()
+      console.log('console cleared to protect your eyes from a cors error cause by fetching from non-existent subreddit')
+    }
+
+    if (json === undefined) return;
+
     dataset = []
 
     for (var i = 0; i < 20; i++) {
@@ -36,6 +48,8 @@ export async function visualize(vizType) {
     dataset = JSON.parse(sessionStorage.getItem('dataset'))
   }
 
+  let subreddit = document.getElementById('subreddit-input');
+  subreddit.style.border = '0';
 
   redraw(dataset, vizType)
   window.addEventListener('resize', () => redraw(dataset, vizType))
