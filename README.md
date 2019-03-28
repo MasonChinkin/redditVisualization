@@ -1,11 +1,13 @@
 # Live Reddit Visualization
 
-This project is meant to highlight vanilla JavaScript skills without the help of React/Redux. I decided to have some fun visualizing the json data one can fetch by putting '.json' at the end of most reddit URLs ([example](https://www.reddit.com/hot.json))
+[Live Demo](https://masonchinkin.github.io/redditVisualization/)
 
-## Features
-* Visualize subreddit posts as bars, bubbles, or a scatterplot
-* Preview posts on hover and go to them on click
-* Tooltip moves relative to mouse to avoid going off screen.
+This project is meant to highlight vanilla JavaScript skills without the help of React/Redux. I decided to have some fun visualizing the JSON data one can fetch by putting '.json' at the end of most reddit URLs ([example](https://www.reddit.com/hot.json))
+
+## Technologies
+* DOM manipulation with vanilla javascript and d3
+* Dynamic d3 visualizations that resize with window resize
+* sessionStorage used to persist data across visualizations
 * Coming soon- animated loading icon and transitions between visualization type
 
 ## Highlights
