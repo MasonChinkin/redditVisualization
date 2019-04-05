@@ -11,8 +11,8 @@ export async function visualize(vizType) {
     let url = getURL();
     let json;
     try {
-      json = await fetch(url).then(res => res.json())
-      catchErrors(json)
+      json = await fetch(url).then(res => res.json());
+      catchErrors(json);
     } catch (err) {
       console.log(err);
       subredditNotFound();
