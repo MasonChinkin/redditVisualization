@@ -150,3 +150,7 @@ a {
   border-width: inherit;
   outline: none;
 }
+
+body::-webkit-scrollbar {
+  width: 0 !important
+}
