@@ -1,4 +1,5 @@
 import './app.scss';
+import "@babel/polyfill";
 import * as d3 from 'd3';
 import {
   visualize

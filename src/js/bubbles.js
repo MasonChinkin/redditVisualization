@@ -3,6 +3,9 @@ import {
   barMouseMove,
   barMouseOut
 } from './tooltip'
+import {
+  interactionTips
+} from './utils';
 
 export function drawBubbles(dataset) {
   let w = visualization.offsetWidth - 10,
@@ -22,6 +25,7 @@ export function drawBubbles(dataset) {
 
   let svg = d3.select("#visualization")
     .append("svg")
+    .attr('id', 'canvas')
     .attr("width", w)
     .attr("height", h);
 
@@ -131,6 +135,7 @@ export function drawBubbles(dataset) {
   }
 
   highlightBubbleButton();
+  interactionTips('Drag, hover, and click!')
 }
 
 function highlightBubbleButton() {

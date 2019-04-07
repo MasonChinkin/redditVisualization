@@ -3,6 +3,9 @@ import {
   barMouseMove,
   barMouseOut
 } from './tooltip'
+import {
+  interactionTips
+} from './utils';
 
 export function drawBars(dataset) {
 
@@ -18,6 +21,7 @@ export function drawBars(dataset) {
 
   let svg = d3.select('#visualization')
     .append('svg')
+    .attr('id', 'canvas')
     .attr('width', w + margin.left + margin.right)
     .attr('height', h + margin.top + margin.bottom)
     .append('g')
@@ -129,6 +133,7 @@ export function drawBars(dataset) {
     .attr('transform', `translate(${-margin.left / 4},${h * 0.6}) rotate(-90)`)
 
   highlightBarButton()
+  interactionTips('Hover and click!')
 }
 
 function highlightBarButton() {

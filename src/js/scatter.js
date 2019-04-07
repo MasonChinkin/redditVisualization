@@ -3,6 +3,9 @@ import {
   barMouseMove,
   barMouseOut
 } from './tooltip';
+import {
+  interactionTips
+} from './utils';
 
 export function drawScatter(dataset) {
 
@@ -43,6 +46,7 @@ export function drawScatter(dataset) {
 
   const svg = d3.select('#visualization')
     .append('svg')
+    .attr('id', 'canvas')
     .attr('width', w)
     .attr('height', h)
 
@@ -140,6 +144,7 @@ export function drawScatter(dataset) {
   })
 
   highlightScatterButton();
+  interactionTips('Hover and click!')
 }
 
 function highlightScatterButton() {

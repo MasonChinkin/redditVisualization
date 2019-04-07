@@ -66,3 +66,12 @@ export function dateRangeNeeded() {
 
   dateRangeInput.disabled = (sortVal === "top") ? false : true
 }
+
+export function interactionTips(tipText) {
+  d3.select('#canvas')
+    .append('text')
+    .attr('x', visualization.offsetWidth * 0.5)
+    .attr('y', visualization.offsetHeight * 0.04)
+    .text(tipText)
+    .attr('class', 'interaction-tips')
+}
