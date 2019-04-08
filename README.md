@@ -2,6 +2,8 @@
 
 [Live Demo](https://masonchinkin.github.io/redditVisualization/)
 
+![](https://github.com/MasonChinkin/redditVisualization/blob/master/dist/demo.gif?raw=true)
+
 This project is meant to highlight vanilla JavaScript skills without the help of React/Redux. I decided to have some fun visualizing the JSON data one can fetch by putting '.json' at the end of most reddit URLs ([example](https://www.reddit.com/hot.json))
 
 ## Technologies
@@ -56,8 +58,3 @@ d3.select('#tooltip')
   .style('left', xpos + 'px')
   .style('top', ypos + 'px')
 ```
-
-### Clean UI/UX
-The form is designed to be extremely easy to use.
-
-![](https://github.com/MasonChinkin/redditVisualization/blob/master/dist/ui.gif?raw=true)
