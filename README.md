@@ -8,7 +8,6 @@ This project is meant to highlight vanilla JavaScript skills without the help of
 * DOM manipulation with vanilla javascript and d3
 * Dynamic d3 visualizations that resize with window resize
 * sessionStorage used to persist data across visualizations
-* Coming soon- animated loading icon and transitions between visualization type
 
 ## Highlights
 
