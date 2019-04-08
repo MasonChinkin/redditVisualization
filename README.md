@@ -8,8 +8,9 @@ This project is meant to highlight vanilla JavaScript skills without the help of
 
 ## Technologies
 * DOM manipulation with vanilla javascript and d3
-* Dynamic d3 visualizations that resize with window resize
+* Responsive d3 visualizations resize with window resize
 * sessionStorage used to persist data across visualizations
+* Babel.js polyfill used to compile async data fetch to ES5.
 
 ## Highlights
 
