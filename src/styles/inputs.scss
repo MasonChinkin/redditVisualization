@@ -5,10 +5,14 @@
   height: 30px;
   margin: 5px 0;
   font-size: 13px;
-  font-weight: lighter;
+  font-weight: 400;
 
   &>* {
     margin-right: 5px;
+
+    &:disabled {
+      color: #cdcdcd;
+    }
   }
 
   &>*::last-child {
